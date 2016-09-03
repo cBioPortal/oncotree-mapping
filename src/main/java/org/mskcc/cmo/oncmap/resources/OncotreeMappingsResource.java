@@ -8,24 +8,19 @@ import org.mskcc.cmo.oncmap.service.CVSService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@EnableAutoConfiguration
-@ComponentScan({"org.mskcc.cmo.oncmap.resources", "org.mskcc.cmo.oncmap.service"})
-public class OncotreeMappingsResource {
+public class OncotreeMappingsResource{
 	
 	@Autowired
 	private CVSService cvsService;
 	
 	private final static Logger LOG = LoggerFactory.getLogger(OncotreeMappingsResource.class);
 	
-	@RequestMapping("/mappings")
+	@RequestMapping("/crosswalk")
 	public MappingsResponse getMappings(
 										@RequestParam(value="vocabularyId", required=false) String vocabularyId,
 										@RequestParam(value="conceptId", required=false) String conceptId,
@@ -49,10 +44,7 @@ public class OncotreeMappingsResource {
 	}
 
 	
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(OncotreeMappingsResource.class, args);
-	}
-	
+
 	
 	private static boolean validateMappingParameters(
 													  String vocabularyId,
