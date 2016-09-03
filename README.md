@@ -4,7 +4,7 @@ This repository hosts the source code for Oncotree Mappings.
 @author: Iker Huerga
 
 ## Introduction
-The Oncotree Mappings Service provides mappings from Controlled Vocabularies such to [*Oncotree*](http://oncotree.mskcc.org/oncotree/)
+The Oncotree Mappings Service provides mappings from Controlled Vocabularies such as ICD9, ICD10 or SNOMEDCT to [*Oncotree*](http://oncotree.mskcc.org/oncotree/)
 
 Let's take the following example
 
