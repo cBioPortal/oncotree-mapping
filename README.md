@@ -27,7 +27,7 @@ Code AML - Acute Myeloid Leukemia
 
 Oncotree Mappings is a simple [*Spring Boot*](http://projects.spring.io/spring-boot/) Application
 
-You have to ways of deploying it
+You have two ways of deploying it
 
 1- Within an existing Servlet Container, such as Tomcat 7. Just execute the command below and copy the war file in your container's webapp directory
 
