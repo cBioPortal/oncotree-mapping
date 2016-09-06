@@ -34,6 +34,11 @@
 			  
 			</dl>
 			
+			<address>
+			  <strong>If You have any questions contact </strong>
+			  <a href="mailto:#">huergasi@mskcc.org</a>
+			</address>
+			
 		</div>
 		
 		<div class="col-md-4">
@@ -53,8 +58,8 @@
                                 Vocabulary ID</label>
                             <select id="vocabularyId" name="vocabularyId" class="form-control" required="required">
                                 <option value="ICDO" selected="">ICDO</option>
-                                <option value="ICD9">ICD9</option>
-                                <option value="ICD10">ICD10</option>
+                                <option value="ICD9CM">ICD9</option>
+                                <option value="ICD10CM">ICD10</option>
                                 <option value="LNC">LOINC</option> 
                                 <option value="MSH">MeSH</option>
                                 <option value="NCI">NCI Thesaurus</option>
@@ -129,10 +134,12 @@ $(function (){
 		var histologyCode = $('#histologyCode').val();
 		var siteCode = $('#siteCode').val();
 		
-		var path = window.location.host;
+		var host = window.location.host;
+		var path = window.location.pathname;
 		var protocol = window.location.protocol;
+		path = path == null ? '/' : path;
 		
-		var url = protocol + '//' + path + 'mappings?' + 'vocabularyId=' + vocabularyId + '&conceptId=' + conceptId + '&histologyCode=' + histologyCode + '&siteCode=' + siteCode;
+		var url = protocol + '//' + host + path + 'crosswalk?' + 'vocabularyId=' + vocabularyId + '&conceptId=' + conceptId + '&histologyCode=' + histologyCode + '&siteCode=' + siteCode;
 		
 		   $.ajax({
 		   type:'GET',
@@ -144,6 +151,17 @@ $(function (){
 		        
 		        if( results.length == 0 ){
 		        	$("#mappings").val("No Mapping Oncotree Concepts Found")
+		        	
+		        	$("#api").empty();
+			        $("#api").append('<blockquote><p>The API call to get this mapping programmatically</p></blockquote><p><code> ' + url + '</code></p>')
+			        
+			        $("#result").empty();
+			        $("#result").append('<blockquote><p>And the result</p></blockquote>');
+			        
+			        $("#resJson").hide();
+			        $("#resJson").html(JSON.stringify(data, undefined, 2));
+			        $("#resJson").show();
+		        
 		        	return;
 		        }
 		        for( var i = 0; i < results.length; i++ ){
