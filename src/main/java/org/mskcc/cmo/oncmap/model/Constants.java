@@ -14,7 +14,10 @@ public class Constants {
 	/** Mappings endpoint for Development Environment **/
 	public final static String DEV_ENDPOINT = "http://datatest.mskcc.org/ontologies/api/concept/crosswalk?vocabularyId={vocabularyId}&conceptId={conceptId}&histologyCode={histologyCode}&siteCode={siteCode}";
 	
-	/** Mappings endpoint for Production Environment**/
+	/** Mappings endpoint for Production INSIDE MSK Environment**/
 	public final static String PROD_ENDPOINT = "http://data.mskcc.org/ontologies/api/concept/crosswalk?vocabularyId={vocabularyId}&conceptId={conceptId}&histologyCode={histologyCode}&siteCode={siteCode}";
+	
+	/** Mappings endpoint for Production Outside MSK **/
+	public final static String PROD_EXTERNAL_ENDPOINT = "http://oncotree.mskcc.org/oncotree-mappings/crosswalk?vocabularyId={vocabularyId}&conceptId={conceptId}&histologyCode={histologyCode}&siteCode={siteCode}";
 
 }

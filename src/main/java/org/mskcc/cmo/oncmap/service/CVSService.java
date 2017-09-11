@@ -62,7 +62,13 @@ public class CVSService {
 		case PROD:
 			this.endpoint = Constants.PROD_ENDPOINT;
 			break;
+			
+		case EXTERNAL:
+			this.endpoint = Constants.PROD_EXTERNAL_ENDPOINT;
+			break;
 		}
+		
+		LOG.info("Using mapping endpoint " + this.endpoint);
 			
 	}
 

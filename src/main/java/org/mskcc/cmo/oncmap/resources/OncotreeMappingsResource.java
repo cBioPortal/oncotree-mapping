@@ -90,6 +90,11 @@ public class OncotreeMappingsResource{
 				rsp.setOncotreeCode( mappings.getCrosswalks().get( Constants.ONCOTREE_VOCAB_KEY ) );
 			}
 		}
+		
+		else if(mappings.getOncotreeCode() != null && mappings.getOncotreeCode().size() > 0 ){
+			LOG.info("Oncotree mappings found for concept id " + mappings.getOncotreeCode().toString());
+			rsp.setOncotreeCode(mappings.getOncotreeCode());
+		}
 		return rsp;
 	}
 	

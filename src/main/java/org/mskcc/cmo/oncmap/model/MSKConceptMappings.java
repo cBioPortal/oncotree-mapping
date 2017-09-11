@@ -7,6 +7,8 @@ public class MSKConceptMappings {
 	
 	private List<String> conceptId;
 	
+	private List<String> oncotreeCode;
+	
 	private List<String> preferredLabel;
 	
 	private List<String> alternativeLabel;
@@ -27,6 +29,10 @@ public class MSKConceptMappings {
 
 	public synchronized List<String> getConceptId() {
 		return conceptId;
+	}
+	
+	public synchronized List<String> getOncotreeCode() {
+		return oncotreeCode;
 	}
 
 	public synchronized List<String> getPreferredLabel() {
@@ -51,6 +57,10 @@ public class MSKConceptMappings {
 
 	public synchronized void setConceptId(List<String> conceptId) {
 		this.conceptId = conceptId;
+	}
+	
+	public synchronized void setOncotreeCode(List<String> oncotreeCode) {
+		this.oncotreeCode = oncotreeCode;
 	}
 
 	public synchronized void setPreferredLabel(List<String> preferredLabel) {
